@@ -306,6 +306,12 @@ $govuk-assets-path: '/govuk/assets/';
     border: 3px solid #1d70b8;
 }
 
+.task-list-panel {
+    background: #f3f2f1;
+    padding: 15px;
+    /* border-left: 5px solid #b1b4b6; */
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
