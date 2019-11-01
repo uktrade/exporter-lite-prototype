@@ -8,7 +8,9 @@ Apply for an export licence
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">Apply for an export licence</h1>
+        <span class="govuk-caption-l">Standard licence</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Apply for an export licence</h1>
+
 		<ol class="app-task-list">
 			<li>
                 <h2 class="app-task-list__section">
@@ -16,13 +18,13 @@ Apply for an export licence
                 </h2>
 			    <ul class="app-task-list__items">
 
-                    <!-- Licence type -->
+                    <!-- Licence type 
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Licence type</a>
                         </span>    
                         <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>            
-                    </li>
+                    </li> -->
 
                     <!-- Add goods -->
                     <li class="app-task-list__item">
@@ -89,12 +91,32 @@ Apply for an export licence
                 </h2>
 				<ul class="app-task-list__items">
                     <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">Sign declaration before you submit</span>
+                        <span class="app-task-list__task-name">Agree to declaration before you submit</span>
                     </li>
 				</ul>
 			</li>
 		</ol>
 		<p class="govuk-body"><a href="#">Cancel application</a></p>
-	</div>
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+        <hr class="govuk-section-break govuk-section-break--visible thick-blue-border govuk-!-margin-bottom-4">
+        <div class="dashboard-panel">
+            <h2 class="govuk-heading-m">Application overview</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row govuk-body-s">
+                    <dt class="govuk-summary-list__key">Name</dt>
+                    <dd class="govuk-summary-list__value">11OCT/2019/PM</dd>
+                </div>
+                <div class="govuk-summary-list__row govuk-body-s">
+                    <dt class="govuk-summary-list__key">Export type</dt>
+                    <dd class="govuk-summary-list__value">Temporary</dd>
+                </div>
+                <div class="govuk-summary-list__row govuk-body-s">
+                    <dt class="govuk-summary-list__key">Created</dt>
+                    <dd class="govuk-summary-list__value">11 October 2019</dd>
+                </div>
+            </dl>
+        </div>
+    </div> -->
 </div>
 {% endblock %}
