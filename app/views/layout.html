@@ -37,14 +37,40 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% set bodyClasses = "exporter-ui" %}
+
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    serviceName: "Exporter service name",
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
   }) }}
 {% endblock %}
 

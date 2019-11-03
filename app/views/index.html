@@ -5,6 +5,19 @@
 LITE Exporter prototype
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}<!-- empty -->{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
