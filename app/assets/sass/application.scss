@@ -312,6 +312,17 @@ $govuk-assets-path: '/govuk/assets/';
     /* border-left: 5px solid #b1b4b6; */
 }
 
+th {
+    position: relative;
+}
+.small-font {
+    font-size: .55em;
+    position: absolute;
+    top: 18px;
+    margin-left: 3px;
+    
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
