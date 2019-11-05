@@ -16,7 +16,11 @@ Goods
                 </legend>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="value-products">Value of product (£)</label>
+                    {% if data['value-products'] %}
+                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
+                    {% else %}
                     <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="40,000,000.00">
+                    {% endif %}
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
