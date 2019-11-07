@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Goods
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">  
+        <span class="govuk-caption-l">Standard licence</span>
+        <h1 class="govuk-heading-l">Goods</h1>
+        <h2 class="govuk-heading-m">You have added 3 goods</h2>
+        <table class="govuk-table govuk-!-margin-bottom-7">
+            <caption class="govuk-table__caption hidden">Dates and amounts</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Name <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Value <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Quantity <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Measurement <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">British Challenger 2</td>
+                    {% if data['value-products'] %}
+                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">£40,000,000.00</td>
+                    {% endif %}
+
+                    {% if data['quantity'] %}
+                    <td class="govuk-table__cell">{{ data['quantity'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">1</td>
+                    {% endif %}
+
+                    {% if data['measurement'] %}
+                    <td class="govuk-table__cell">{{ data['measurement'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">pieces</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good.html">Change</a></td> 
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
+                    <td class="govuk-table__cell">£137,400.00</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">l</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Change</a></td> 
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
+                    <td class="govuk-table__cell">£91,600.00</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">l</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Change</a></td> 
+                </tr>
+            </tbody>
+        </table>
+        <a href="index.html" class="govuk-button ">Save and continue</a> 
+	</div>
+</div>
+{% endblock %}
