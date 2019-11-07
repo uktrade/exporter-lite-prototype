@@ -327,6 +327,12 @@ th {
     display: inline-block;
 }
 
+.good-panel {
+    border-top: 5px solid #1d70b8;
+    background: #f3f2f1;
+    padding: 15px;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
