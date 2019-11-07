@@ -323,6 +323,10 @@ th {
     
 }
 
+.link-text-button {
+    display: inline-block;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
