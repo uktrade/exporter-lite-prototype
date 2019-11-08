@@ -14,7 +14,7 @@ Add to application
                     <span class="govuk-caption-l">Standard licence</span> 
                     <!-- <span class="govuk-caption-l">Good name 1</span>-->
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
-                    <!-- <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['product-name'] }}</span> 
+                    <!-- <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['good-name'] }}</span> 
                     <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Good name 1</h2>-->
                 </legend>
 
@@ -36,8 +36,8 @@ Add to application
                 </div> -->
 
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="value-products">Value of product (£)</label>
-                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
+                    <label class="govuk-label govuk-label--m" for="value-goods">Value of good (£)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
@@ -75,16 +75,16 @@ Add to application
                         </optgroup> 
                     </select>
                 </div> 
-                <!-- <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Will this be used as a part for another product?</p>
+                <!-- <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Will this be used as a part for another good?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes" {{ checked("end-product", "Yes") }}>
-                            <label class="govuk-label govuk-radios__label" for="end-product-yes">Yes</label>
+                            <input class="govuk-radios__input" id="end-good-yes" name="end-good" type="radio" value="Yes" {{ checked("end-good", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-good-yes">Yes</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No" {{ checked("end-product", "No") }}>
-                            <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
+                            <input class="govuk-radios__input" id="end-good-no" name="end-good" type="radio" value="No" {{ checked("end-good", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-good-no">No</label>
                         </div>	
                     </div>
                 </div> -->
