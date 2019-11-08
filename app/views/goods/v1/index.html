@@ -20,7 +20,11 @@ Goods
             </div>
         </form>
 
+        {% if data['addGood'] %}
+        <h2 class="govuk-heading-m clearfix">You have 58 goods</h2>
+        {% else %}
         <h2 class="govuk-heading-m clearfix">You have 57 goods</h2>
+        {% endif %}
         <table class="govuk-table govuk-!-margin-bottom-3">
             <caption class="govuk-table__caption hidden">Dates and amounts</caption>
             <thead class="govuk-table__head">
@@ -31,6 +35,22 @@ Goods
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% if data['addGood'] %}
+                <!-- If a new good is added -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">{{ data['add-good-name'] }}</a></td>
+                    {% if data['add-good-controlled'] == "Yes" %}
+                    <td class="govuk-table__cell">{{ data['add-control-rating'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                    {% endif %}
+                    {% if data['add-part-number'] %}
+                    <td class="govuk-table__cell">{{ data['add-part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                    {% endif %}
+                </tr>
+                {% endif %}
                 <!-- 1-10 of 10 items -->
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
@@ -289,7 +309,11 @@ Goods
             </tbody>
         </table>
         <div class="pagination">
+            {% if data['addGood'] %}
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>58</strong> goods</div>
+            {% else %}
             <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>57</strong> goods</div>
+            {% endif %}
             <ul class="pager-items govuk-body">
                 <li>1</li>
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">2</a></li>
