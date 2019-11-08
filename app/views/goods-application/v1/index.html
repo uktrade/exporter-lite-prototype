@@ -2,16 +2,18 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Goods
+Add goods
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">  
-        <h1 class="govuk-heading-l float-left">Goods</h1>
+        <span class="govuk-caption-l">Standard licence</span>
+        <h1 class="govuk-heading-l">Add goods</h1>
+        <!-- <h1 class="govuk-heading-l float-left">Add goods</h1>
         <div class="float-right">
             <a href="#"><button class="govuk-button" data-module="govuk-button">Add goods</button></a>
-        </div>
+        </div> -->
         <h2 class="govuk-heading-m clearfix">You have 57 goods</h2>
         <table class="govuk-table govuk-!-margin-bottom-3">
             <caption class="govuk-table__caption hidden">Dates and amounts</caption>
@@ -26,14 +28,14 @@ Goods
             <tbody class="govuk-table__body">
                 <!-- 1-10 of 10 items -->
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="good.html" class="govuk-link">Good name 1</a></td>
+                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
                     <td class="govuk-table__cell">AB1</td>
                     <td class="govuk-table__cell">P/N1-123</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add to application</a></td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html" class="govuk-link">Add to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="#" class="govuk-link">Good name 2</a></td>
-                    <td class="govuk-table__cell">AB2</td>
+                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
                     <td class="govuk-table__cell">P/N2-123</td>
                     <td class="govuk-table__cell"><a href="#" class="govuk-link">Add to application</a></td>
                 </tr>
@@ -112,7 +114,7 @@ Goods
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="#" class="govuk-link">Good name 15</a></td>
-                    <td class="govuk-table__cell">AB15</td>
+                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
                     <td class="govuk-table__cell">P/N15-123</td>
                     <td class="govuk-table__cell"><a href="#" class="govuk-link">Add to application</a></td>
                 </tr>

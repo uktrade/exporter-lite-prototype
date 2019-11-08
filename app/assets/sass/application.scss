@@ -17,6 +17,11 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.govuk-width-container {
+    // Default is 960px, but we can make the width longer if our content requires it
+    // max-width: 1020px;
+}
+
 .govuk-tabs {
     font-family: "GDS Transport", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
