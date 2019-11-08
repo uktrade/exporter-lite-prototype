@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Goods
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">  
+        <h1 class="govuk-heading-l float-left">Goods</h1>
+        <div class="float-right">
+            <a href="#"><button class="govuk-button" data-module="govuk-button">Add a good</button></a>
+        </div>
+
+        <form action="#" method="post" class="clearfix">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="filter-goods">Search by name, control list classification or part number</label>
+                <input class="govuk-input search-icon" id="filter-goods" name="filter-goods" type="search" value="Good name 1">
+            </div>
+        </form>
+
+        <div class="filter-results govuk-body govuk-!-font-size-16">
+            <span class="title">Containing</span>
+            <a href="index" class="filter-button">
+                <span class="close-btn govuk-!-font-size-24">×</span> 
+                <span class="filter-word">Good name 1</span>
+            </a>
+            <!-- <span>and</span>
+            <a href="#" class="filter-button">
+                <span class="close-btn govuk-!-font-size-24">&times;</span>
+                <span class="filter-word">Nuclear Fuel Complex 13</span>
+            </a> -->
+        </div>
+
+        <h2 class="govuk-heading-m clearfix">You have 1 good</h2>
+        <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption hidden">Dates and amounts</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Name <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Control list classification <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Part number <span class="small-font">&#9660;</span></a></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
+                    <td class="govuk-table__cell">AB1</td>
+                    <td class="govuk-table__cell">P/N1-123</td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+{% endblock %}

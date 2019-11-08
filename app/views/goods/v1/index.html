@@ -10,8 +10,16 @@ Goods
 	<div class="govuk-grid-column-full">  
         <h1 class="govuk-heading-l float-left">Goods</h1>
         <div class="float-right">
-            <a href="#"><button class="govuk-button" data-module="govuk-button">Add goods</button></a>
+            <a href="#"><button class="govuk-button" data-module="govuk-button">Add a good</button></a>
         </div>
+
+        <form action="search-results" method="post" class="clearfix">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="filter-goods">Search by name, control list classification or part number</label>
+                <input class="govuk-input search-icon" id="filter-goods" name="filter-goods" type="search">
+            </div>
+        </form>
+
         <h2 class="govuk-heading-m clearfix">You have 57 goods</h2>
         <table class="govuk-table govuk-!-margin-bottom-3">
             <caption class="govuk-table__caption hidden">Dates and amounts</caption>
