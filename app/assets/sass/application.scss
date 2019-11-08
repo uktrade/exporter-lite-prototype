@@ -344,6 +344,24 @@ th {
     width: 66.6666%;
 }
 
+.status-tag {
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #0b0c0c;
+    padding: 0 5px;
+    margin: 10px 0 20px 10px;
+}
+
+.status-info {
+    border: 2px solid #1d70b8;
+    color: #1d70b8;
+}
+
+.status-success {
+    border: 2px solid #00703c;
+    color: #00703c;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;

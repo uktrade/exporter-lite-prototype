@@ -8,8 +8,12 @@ Good name 3
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Good name 3</h1>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
+        {% if data['good-name'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-name'] }}</h1> <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Under review</span>
+        {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Good name 3</h1> <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Under review</span>
+        {% endif %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border clearfix">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
                 <dd class="govuk-summary-list__value">Brief description to go here about what is the intended use for this good.</dd>
@@ -56,11 +60,11 @@ Good name 3
             </section>
         </div>
     </div>
-    <div class="govuk-grid-column-one-third">
+    <!-- <div class="govuk-grid-column-one-third">
         <div class="good-panel">
             <p class="govuk-body">This good has been used in <span class="govuk-!-font-weight-bold govuk-!-font-size-24">12</span> applications.</p>
             <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">View applications</a></p>
         </div>
-    </div>
+    </div> -->
 </div>
 {% endblock %}
