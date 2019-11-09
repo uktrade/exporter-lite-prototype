@@ -2,25 +2,25 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Good name 1
+Good name 4
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Good name 1</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Good name 4</h1> <span class="status-tag status-success govuk-body govuk-!-font-size-14 float-left">Verified</span>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
-                <dd class="govuk-summary-list__value">Brief description to go here about what is the intended use for this good.</dd>
+                <dd class="govuk-summary-list__value">A brief description about the intended use for this good.</dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
-                <dd class="govuk-summary-list__value">AB1</dd>
+                <dd class="govuk-summary-list__value">AB4</dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
-                <dd class="govuk-summary-list__value">P/N1-123</dd>
+                <dd class="govuk-summary-list__value">P/N4-123</dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Document</dt>
@@ -31,7 +31,7 @@ Good name 1
                 <dd class="govuk-summary-list__value">A description about the document that has been attached for this good.</dd>
             </div>
         </dl>
-        <div class="govuk-inset-text govuk-!-margin-bottom-9">This good is currently being reviewed by ECJU, but you can add notes about your good or send a query to ECJU.</div>
+        <!-- <div class="govuk-inset-text govuk-!-margin-bottom-9">This good is currently being reviewed by ECJU, but you can add notes about your good or send a query to ECJU.</div> -->
         <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
             <h2 class="govuk-tabs__title">Contents</h2>
             <ul class="govuk-tabs__list">
@@ -57,9 +57,8 @@ Good name 1
         </div>
     </div>
     <div class="govuk-grid-column-one-third">
-        <div class="good-panel">
-            <p class="govuk-body">This good has been used in <span class="govuk-!-font-weight-bold">12</span> applications.</p>
-            <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">View applications</a></p>
+        <div class="info-panel">
+            <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-0">This good has been verified by ECJU, and can be used in your application.</p>
         </div>
     </div>
 </div>
