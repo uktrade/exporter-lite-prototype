@@ -15,14 +15,14 @@ Goods
         <form action="#" method="post" class="clearfix" autocomplete="off">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="filter-goods">Search by name, control list classification, part number or status</label>
-                <input class="govuk-input search-icon" id="filter-goods" name="filter-goods" type="search" value="Good name 1">
+                <input class="govuk-input search-icon" id="filter-goods" name="filter-goods" type="search" value="Good name 2">
             </div>
         </form>
         <div class="filter-results govuk-body govuk-!-font-size-16">
             <span class="title">Containing</span>
             <a href="index" class="filter-button">
                 <span class="close-btn govuk-!-font-size-24">×</span> 
-                <span class="filter-word">Good name 1</span>
+                <span class="filter-word">Good name 2</span>
             </a>
         </div>
         <h2 class="govuk-heading-m clearfix">1 good found</h2>
@@ -38,22 +38,10 @@ Goods
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    {% if data['good-name'] %}
-                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">{{ data['good-name'] }}</a></td>
-                    {% else %}
-                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
-                    {% endif %}
-                    {% if data['control-rating'] %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">AB1</td>
-                    {% endif %}
-                    {% if data['part-number'] %}
-                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">P/N1-123</td>
-                    {% endif %}
-                    <td class="govuk-table__cell"><span class="status-tag status-draft govuk-body govuk-!-font-size-14 govuk-!-margin-0">Draft</span></td>
+                    <td class="govuk-table__cell"><a href="good-2.html" class="govuk-link">Good name 2</a></td>
+                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                    <td class="govuk-table__cell">P/N2-123</td>
+                    <td class="govuk-table__cell"><span class="status-tag status-info govuk-body govuk-!-font-size-14 govuk-!-margin-0">Submitted</span></td>
                 </tr>
             </tbody>
         </table>

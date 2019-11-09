@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove good
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Are you sure you want to remove this good?</h1>
+        <!-- <form action="index" method="post"> -->
+            <input type="hidden" name="removeGood" value="true">
+            <a href="index.html"><button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove good</button></a>
+            <a href="good-1.html"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">No, do not remove good</button></a>
+        <!-- </form> -->
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+        <div class="info-panel">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Good name 1</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Used for</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">A brief description about the intended use for this good.</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">AB1</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Part number</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">P/N1-123</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Document</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Type of document</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">A description about the document that has been attached for this good.</p>
+        </div>
+    </div> -->
+</div>
+{% endblock %}
