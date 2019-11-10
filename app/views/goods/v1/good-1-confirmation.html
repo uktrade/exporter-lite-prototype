@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Good name 1
+This good has been submitted
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,6 +21,7 @@ Good name 1
             <h1 class="govuk-panel__title govuk-!-font-size-36">This good has been submitted for a review with ECJU</h1>
         </div>
         <form action="index" method="post">
+			<input type="hidden" name="changeTag" value="true">
 			<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
         </form> 
     </div>
