@@ -5,6 +5,29 @@
 Good name 1
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Goods",
+        href: "index"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+
 {% block content %}
 <!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -64,11 +87,11 @@ Good name 1
                 {% endif %}
             </div>
         </dl>
-        <!-- <form action="#" method="post"> -->
-            <a href="good-1-confirmation.html"><button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Submit this good</button></a>
-            <a href="edit-good-1.html"><button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button></a>
-            <a href="remove-good-1.html"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button></a>
-        <!-- </form> -->
+        <form action="good-1-confirmation" method="post">
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Submit this good</button>
+            <button type="submit" formaction="edit-good-1" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button>
+            <button type="submit" formaction="remove-good-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button>
+        </form>
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="info-panel">

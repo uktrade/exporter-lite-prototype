@@ -9,11 +9,11 @@ Remove good
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Are you sure you want to remove this good?</h1>
-        <!-- <form action="index" method="post"> -->
+        <form action="index" method="post"> 
             <input type="hidden" name="removeGood" value="true">
-            <a href="index.html"><button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove good</button></a>
-            <a href="good-1.html"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">No, do not remove good</button></a>
-        <!-- </form> -->
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove good</button>
+            <button type="submit" formaction="good-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">No, do not remove good</button>
+        </form> 
     </div>
 </div>
 {% endblock %}
