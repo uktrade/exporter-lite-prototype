@@ -12,18 +12,22 @@ Good name 1
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Goods",
-        href: "index"
-      }
-    ]
-  }) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+		<li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="#">Home</a>
+		</li>
+		<li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="index">Goods</a>
+		</li>
+		{% if data['good-name'] %}
+		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['good-name'] }}</li>
+		{% else %}
+		<li class="govuk-breadcrumbs__list-item" aria-current="page">Good name 1</li>
+		{% endif %}
+    </ol>
+  </div>
 {% endblock %}
 
 {% block content %}
