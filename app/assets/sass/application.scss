@@ -367,6 +367,26 @@ th {
     color: #00703c;
 }
 
+.status-tag-invert {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2px 5px;
+    margin: 10px 0 20px 5px;
+    color: #fff;
+}
+
+.status-draft-invert {
+    background: #6f777b; 
+}
+
+.status-info-invert {
+    background: #1d70b8;
+}
+
+.status-success-invert {
+    background: #00703c;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
