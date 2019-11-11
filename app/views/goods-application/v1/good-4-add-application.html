@@ -8,7 +8,7 @@ Add to application
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post">
+        <form action="goods-in-application" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <span class="govuk-caption-l">Standard licence</span> 
@@ -28,7 +28,7 @@ Add to application
                     <select class="govuk-select" id="good-4-measurement-application" name="good-4-measurement-application">
                         <option value="select" selected>Select</option>
                         <optgroup label="Other">
-                            <option value="intangible" {{ 'selected' if checked("good-1-measurement", "intangible") }}>intangible</option>
+                            <option value="intangible" {{ 'selected' if checked("good-4-measurement-application", "intangible") }}>intangible</option>
                         </optgroup>
                         <optgroup label="Item">
                             <option value="pieces" {{ 'selected' if checked("good-4-measurement-application", "pieces") }}>pieces</option>
