@@ -27,13 +27,30 @@ Goods in application
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body">
+                    {% if data['removeGoodApplication'] %}
+                    <!-- remove table row -->
+                    {% else %}
+                        {% if data['GoodAddApplication'] %}
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">{{ data['add-good-name-application'] }}</td>
+                            <td class="govuk-table__cell">£{{ data['good-value-application'] }}</td>
+                            <td class="govuk-table__cell">{{ data['good-quantity-application'] }}</td>
+                            <td class="govuk-table__cell">{{ data['good-measurement-application'] }}</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good-add-application.html">Edit</a>&nbsp;&nbsp;&nbsp;<a href="remove-good-application.html">Remove</a></td> 
+                        </tr>
+                        {% endif %}
+                    {% endif%}
+                    {% if data['removeGood4Application'] %}
+                    <!-- remove table row -->
+                    {% else %}
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">Good name 4</td>
                         <td class="govuk-table__cell">£{{ data['good-4-value-application'] }}</td>
                         <td class="govuk-table__cell">{{ data['good-4-quantity-application'] }}</td>
                         <td class="govuk-table__cell">{{ data['good-4-measurement-application'] }}</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good-4-add-application.html">Edit</a>&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good-4-add-application.html">Edit</a>&nbsp;&nbsp;&nbsp;<a href="remove-good-4-application.html">Remove</a></td> 
                     </tr>
+                    {% endif %}
                 </tbody>
             </table>
             <button type="submit" class="govuk-button" data-module="govuk-button" formaction="#">Save and continue</button>
