@@ -15,11 +15,11 @@ Good name 4
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Good name 4</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="value-products">Value of product (£)</label>
-                    {% if data['value-products'] %}
-                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
+                    <label class="govuk-label govuk-label--m" for="value-good">Value of good (£)</label>
+                    {% if data['value-good'] %}
+                    <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" value="{{ data['value-good'] }}">
                     {% else %}
-                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="40,000,000.00">
+                    <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" value="40,000,000.00">
                     {% endif %}
                 </div>
                 <div class="govuk-form-group">
@@ -64,8 +64,6 @@ Good name 4
                 </div> 
             </fieldset>
             <button type="submit" class="govuk-button govuk-!-margin-right-4" data-module="govuk-button">Save and continue</button>
-            <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove good</button> 
-            <span class="link-text-button govuk-body govuk-!-margin-top-1"><a href="#" class="govuk-link">Remove good</a></span> -->
         </form>
     </div>
 </div>
