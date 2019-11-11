@@ -16,7 +16,7 @@ Add a good
                 </legend>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="add-good-name">Name of good</label>
-                    <span class="govuk-hint">Use a unique good name so you can recognise this in a big list of similar goods.</span>
+                    <span class="govuk-hint govuk-!-margin-bottom-2">Use a unique good name so you can recognise this in a big list of similar goods.</span>
                     <input class="govuk-input govuk-!-width-full" id="add-good-name" name="add-good-name" type="text" value="{{ data['add-good-name'] }}">
                 </div>
                 <div class="govuk-form-group">
@@ -24,7 +24,7 @@ Add a good
                     <textarea class="govuk-textarea" id="add-good-description" name="add-good-description" rows="5" aria-describedby="add-good-description-hint">{{ data['add-good-description'] }}</textarea>
                 </div>	
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your good controlled?</p>
-                <span class="govuk-hint">Controlled goods are ones that pose a security risk. You need a licence to export a controlled good.</span>
+                <span class="govuk-hint govuk-!-margin-bottom-2">Controlled goods are ones that pose a security risk. You need a licence to export a controlled good.</span>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
@@ -58,7 +58,7 @@ Add a good
                     <input class="govuk-input govuk-!-width-one-half" id="add-part-number" name="add-part-number" type="text" value="{{ data['add-part-number'] }}">
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload your good specification</p>
-                <span class="govuk-hint">If you do not have a good specification, you can upload any other document that explains what the good will be used for.</span>
+                <span class="govuk-hint govuk-!-margin-bottom-2">If you do not have a good specification, you can upload any other document that explains what the good will be used for.</span>
                 <div class="govuk-form-group">
                     <input class="govuk-file-upload" id="add-file-upload" name="add-file-upload" type="file">
                 </div>
