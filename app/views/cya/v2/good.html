@@ -23,13 +23,17 @@ Good name 4
                     {% endif %}
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="quantity">Quantity</label>
+                    <span id="quantity-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
                     <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="1">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
                     <select class="govuk-select" id="measurement" name="measurement">
                         <option value="select">Select</option>
+                        <optgroup label="Other">
+                            <option value="intangible" {{ 'selected' if checked("measurement", "intangible") }}>intangible</option>
+                        </optgroup>
                         <optgroup label="Item">
                             <option value="pieces" selected {{ 'selected' if checked("measurement", "pieces") }}>pieces</option>
                         </optgroup>

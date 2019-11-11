@@ -27,7 +27,8 @@ Goods in application
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Good name 4</td>
                     {% if data['value-products'] %}
-                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
+                    <td class="govuk-table__cell">£{{ data['value-products'] }}</td>
+                    <!-- <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td> -->
                     {% else %}
                     <td class="govuk-table__cell">£40,000,000.00</td>
                     {% endif %}

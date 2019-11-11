@@ -19,13 +19,17 @@ Add to application
                     <input class="govuk-input govuk-!-width-one-half" id="good-1-value" name="good-1-value" type="text" value="{{ data['good-1-value'] }}">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="good-1-quantity">Quantity</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-1-quantity">Quantity</label>
+                    <span id="good-1-quantity-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
                     <input class="govuk-input govuk-!-width-one-half" id="good-1-quantity" name="good-1-quantity" type="text" value="{{ data['good-1-quantity'] }}">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="good-1-measurement">Unit of measurement</label>
                     <select class="govuk-select" id="good-1-measurement" name="good-1-measurement">
                         <option value="select" selected>Select</option>
+                        <optgroup label="Other">
+                            <option value="intangible" {{ 'selected' if checked("good-1-measurement", "intangible") }}>intangible</option>
+                        </optgroup>
                         <optgroup label="Item">
                             <option value="pieces" {{ 'selected' if checked("good-1-measurement", "pieces") }}>pieces</option>
                         </optgroup>
