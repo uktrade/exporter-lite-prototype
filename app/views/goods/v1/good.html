@@ -38,7 +38,12 @@
 </div> -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['add-good-name'] }}</h1> <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['add-good-name'] }}</h1> 
+        {% if data['changeTag'] %}
+        <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Submitted</span>
+        {% else %}
+        <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
+        {% endif %}
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
@@ -61,15 +66,45 @@
                 <dd class="govuk-summary-list__value">{{ data['add-document-description'] }}</dd>
             </div>
         </dl>
-        <form action="#" method="post">
+        {% if data['changeTag'] %}
+        <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#notes">Notes</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#ecju-queries">ECJU queries</a>
+                </li>
+            </ul>
+            <section class="govuk-tabs__panel border-less-tabs" id="notes">
+                <form action="#" method="post">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="good-notes">Is there anything else you want to say about this good?</label>
+                        <textarea class="govuk-textarea" id="good-notes" name="good-notes" rows="5" aria-describedby="good-notes-hint">{{ data['good-notes'] }}</textarea>
+                    </div>	
+                    <button class="govuk-button" data-module="govuk-button">Send message</button>
+                </form>
+            </section>
+            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="ecju-queries">
+                <p class="govuk-body">No messages.</p>
+            </section>
+        </div> 
+        {% else %}
+        <form action="good-confirmation" method="post">
             <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Submit this good</button>
-            <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button>
+            <button type="submit" formaction="edit-good" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button>
+            <button type="submit" formaction="remove-good" class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button>
         </form>
+        {% endif %}
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="info-panel">
+            {% if data['changeTag'] %}
+            <p class="govuk-body-s govuk-!-margin-bottom-0">This good has been submitted to ECJU, but you can add notes about your good or send a query to ECJU.</p>
+            {% else %}
             <p class="govuk-body-s govuk-!-margin-bottom-0">This good can be edited or removed. It will remain as a draft until it is submitted to ECJU for a review.</p>
+            {% endif %}
         </div>
     </div>
 </div>

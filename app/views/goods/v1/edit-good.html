@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Edit good
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="good" method="post" autocomplete="off">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Edit good</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-name">Name of good</label>
+                    <span class="govuk-hint">Use a unique good name so you can recognise this in a big list of similar goods.</span>
+                    <input class="govuk-input govuk-!-width-full" id="add-good-name" name="add-good-name" type="text" value="{{ data['add-good-name'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-good-description">What does your good do?</label>
+                    <textarea class="govuk-textarea" id="add-good-description" name="add-good-description" rows="5" aria-describedby="add-good-description-hint">{{ data['add-good-description'] }}</textarea>
+                </div>	
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your good controlled?</p>
+                <span class="govuk-hint">Controlled goods are ones that pose a security risk. You need a licence to export a controlled good.</span>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-conditional" name="add-good-controlled" type="radio" value="Yes" {{ checked("add-good-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional" checked>
+                            <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="add-control-rating">What is the control list classification?</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="add-control-rating" name="add-control-rating" type="text" value="{{ data['add-control-rating'] }}">
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-good-controlled-no" name="add-good-controlled" type="radio" value="No" {{ checked("add-good-controlled", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="add-good-controlled-no">No</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-good-controlled-unsure" name="add-good-controlled" type="radio" value="Not sure" {{ checked("add-good-controlled", "Not sure") }}>
+                            <label class="govuk-label govuk-radios__label" for="add-good-controlled-unsure">Not sure</label>
+                        </div>	
+                    </div>
+                    <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">I am not sure if my good is controlled</span>
+                        </summary>
+                        <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank" class="govuk-link">find out if your good is controlled</a> using another GOV.UK service (Check if you need an export licence).<br /><br />If your good is controlled, you will be given a control code to answer this question.</div>
+                    </details>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-part-number">Part number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="add-part-number" name="add-part-number" type="text" value="{{ data['add-part-number'] }}">
+                </div>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload your good specification</p>
+                <span class="govuk-hint">If you do not have a good specification, you can upload any other document that explains what the good will be used for.</span>
+                <div class="govuk-form-group">
+                    <input class="govuk-file-upload" id="add-file-upload" name="add-file-upload" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-document-description">What have you uploaded? (optional)</label>
+                    <textarea class="govuk-textarea" id="add-document-description" name="add-document-description" rows="5">{{ data['add-document-description'] }}</textarea>
+                </div>	 
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}

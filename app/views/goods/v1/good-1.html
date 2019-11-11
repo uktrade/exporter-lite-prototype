@@ -51,14 +51,15 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         {% if data['good-name'] %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-name'] }}</h1>         {% if data['changeTag'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-name'] }}</h1> 
+            {% if data['changeTag1'] %}
             <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Submitted</span>
             {% else %}
             <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
             {% endif %}
         {% else %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Good name 1</h1>
-            {% if data['changeTag'] %}
+            {% if data['changeTag1'] %}
             <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Submitted</span>
             {% else %}
             <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
@@ -102,7 +103,7 @@
                 {% endif %}
             </div>
         </dl>
-        {% if data['changeTag'] %}
+        {% if data['changeTag1'] %}
         <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
             <h2 class="govuk-tabs__title">Contents</h2>
             <ul class="govuk-tabs__list">
@@ -136,7 +137,7 @@
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="info-panel">
-            {% if data['changeTag'] %}
+            {% if data['changeTag1'] %}
             <p class="govuk-body-s govuk-!-margin-bottom-0">This good has been submitted to ECJU, but you can add notes about your good or send a query to ECJU.</p>
             {% else %}
             <p class="govuk-body-s govuk-!-margin-bottom-0">This good can be edited or removed. It will remain as a draft until it is submitted to ECJU for a review.</p>
