@@ -18,7 +18,15 @@ Goods in application
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add another good to application</button>
                 {% endif %}
             </div>
-            <!-- Add a count in place --><h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
+            
+            {% if data['goodAddApplication'] or data['goodAdd4Application'] %}
+                {% if data['goodAddApplication'] and data['goodAdd4Application'] %}
+                <h2 class="govuk-heading-m clearfix">You have added 2 goods</h2>
+                {% else %}
+                <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
+                {% endif %}
+            {% endif %}
+
             <table class="govuk-table govuk-!-margin-bottom-7">
                 <caption class="govuk-table__caption hidden">Dates and amounts</caption>
                 <thead class="govuk-table__head">
