@@ -28,9 +28,11 @@ Apply for an export licence
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Standard licence</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Apply for an export licence</h1>
+        <!-- <span class="govuk-caption-l">Standard licence</span> -->
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Apply for an export licence</h1>
 
+        <h2 class="govuk-heading-m font-normal">Standard licence</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <!-- <div class="task-list-panel govuk-!-margin-bottom-7">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
@@ -48,7 +50,7 @@ Apply for an export licence
             </div>
         </div> -->
 
-		<ol class="app-task-list">
+		<ol class="app-task-list govuk-!-margin-top-7">
 			<li>
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">1. </span> Prepare application
@@ -66,9 +68,9 @@ Apply for an export licence
                     <!-- Add goods -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#" aria-describedby="add-goods-completed">Add goods</a>
+                            <a href="#" aria-describedby="add-goods-not-started">Add goods</a>
                         </span>  
-                        <strong class="govuk-tag govuk-tag-done app-task-list__task-completed" id="add-goods-completed">Completed</strong>              
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="add-goods-not-started">Not started</strong>            
                     </li>
     
                     <!-- Location of goods -->
