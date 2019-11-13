@@ -19,7 +19,9 @@ Goods in application
                 {% endif %}
             </div>
             
-            {% if data['goodAddApplication'] or data['goodAdd4Application'] %}
+            {% if data['removeGoodApplication'] or data['removeGood4Application'] %}
+            <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
+            {% else %}
                 {% if data['goodAddApplication'] and data['goodAdd4Application'] %}
                 <h2 class="govuk-heading-m clearfix">You have added 2 goods</h2>
                 {% else %}
