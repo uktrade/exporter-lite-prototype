@@ -1,0 +1,160 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Apply for an export licence
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Apply for an export licence"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Apply for an export licence</h1>
+
+        <h2 class="govuk-heading-m font-normal">Standard licence</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <!-- <div class="task-list-panel govuk-!-margin-bottom-7">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Application reference</h3>
+                    {% if data['reference-application'] %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['reference-application'] }} <a href="application-reference.html">Change</a></p>
+                    {% else %}
+                    <p class="govuk-body-s govuk-!-margin-bottom-1">01112019-ABCEXP <a href="application-reference.html">Change</a></p>
+                    {% endif %}
+                </div>
+                <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Export type</h3>
+                    <p class="govuk-body-s govuk-!-margin-bottom-1">Temporary</p>
+                </div>
+            </div>
+        </div> -->
+
+		<ol class="app-task-list govuk-!-margin-top-7">
+			<li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Prepare application
+                </h2>
+			    <ul class="app-task-list__items">
+
+                    <!-- Licence type 
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#">Licence type</a>
+                        </span>    
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="name-in-progress">Not started</strong>            
+                    </li> -->
+
+                    <!-- Add goods -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="add-goods-not-started">Add goods</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="add-goods-not-started">Not started</strong>            
+                    </li>
+    
+                    <!-- Location of goods -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="location-goods-not-started">Location of goods</a>
+                        </span> 
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="location-goods-not-started">Not started</strong>               
+                    </li>
+            
+                    <!-- End user -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="end-user-not-started">End user</a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="end-user-not-started">Not started</strong>               
+                    </li>
+
+                    <!-- Consignee -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="consignee-not-started">Consignee</a>
+                        </span> 
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="consignee-not-started">Not started</strong>               
+                    </li>
+
+                    <!-- Ultimate end user -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="ultimate-end-users-not-started">Ultimate end users</a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="ultimate-end-users-not-started">Not started</strong>                
+                    </li>
+
+                    <!-- Third parties -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="third-parties-optional">Third parties</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="third-parties-optional">Optional</strong>              
+                    </li>
+
+                    <!-- Additional documents -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" aria-describedby="additional-documents-optional">Additional documents</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-not-done app-task-list__task-completed" id="additional-documents-optional">Optional</strong>              
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Review application
+                </h2>
+                <ul class="app-task-list__items"> 
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Check your answers</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Apply
+                </h2>
+				<ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Agree to declaration before you submit</span>
+                    </li>
+				</ul>
+			</li>
+		</ol>
+		<p class="govuk-body"><a href="cancel-application.html">Cancel application</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="info-panel">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Application reference</h3>
+            {% if data['reference-application'] %}
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['reference-application'] }} <a href="application-reference.html">Change</a></p>
+            {% else %}
+            <p class="govuk-body-s govuk-!-margin-bottom-1">01112019-ABCEXP <a href="application-reference.html">Change</a></p>
+            {% endif %}
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Export type</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Temporary</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
