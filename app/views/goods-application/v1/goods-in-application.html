@@ -12,17 +12,17 @@ Goods in application
         <h1 class="govuk-heading-l float-left">Goods in application</h1>
         <form action="index" method="post">
             <div class="float-right">
-                {% if data['removeGoodApplication'] and data['removeGood4Application'] %}
+                {% if data['removeGoodApplication'] and data['removeGood3Application'] %}
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add a good to application</button>
                 {% else %}
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add another good to application</button>
                 {% endif %}
             </div>
             
-            {% if data['removeGoodApplication'] or data['removeGood4Application'] %}
+            {% if data['removeGoodApplication'] or data['removeGood3Application'] %}
             <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
             {% else %}
-                {% if data['goodAddApplication'] and data['goodAdd4Application'] %}
+                {% if data['goodAddApplication'] and data['goodAdd3Application'] %}
                 <h2 class="govuk-heading-m clearfix">You have added 2 goods</h2>
                 {% else %}
                 <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
@@ -55,16 +55,16 @@ Goods in application
                         {% endif %}
                     {% endif %}
 
-                    {% if data['removeGood4Application'] %}
+                    {% if data['removeGood3Application'] %}
                     <!-- remove table row -->
                     {% else %}
-                        {% if data['goodAdd4Application'] %}
+                        {% if data['goodAdd3Application'] %}
                         <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">Good name 4</td>
-                            <td class="govuk-table__cell">£{{ data['good-4-value-application'] }}</td>
-                            <td class="govuk-table__cell">{{ data['good-4-quantity-application'] }}</td>
-                            <td class="govuk-table__cell">{{ data['good-4-measurement-application'] }}</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good-4-add-application.html">Edit</a>&nbsp;&nbsp;&nbsp;<a href="remove-good-4-application.html">Remove</a></td> 
+                            <td class="govuk-table__cell">Good name 3</td>
+                            <td class="govuk-table__cell">£{{ data['good-3-value-application'] }}</td>
+                            <td class="govuk-table__cell">{{ data['good-3-quantity-application'] }}</td>
+                            <td class="govuk-table__cell">{{ data['good-3-measurement-application'] }}</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="good-3-add-application.html">Edit</a>&nbsp;&nbsp;&nbsp;<a href="remove-good-3-application.html">Remove</a></td> 
                         </tr>
                         {% endif %}
                     {% endif %}
