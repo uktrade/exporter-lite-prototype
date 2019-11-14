@@ -1,0 +1,135 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    {% if data['good-name'] %}
+    {{ data['good-name'] }}
+    {% else %}
+    Good name 1
+    {% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+		<li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="#">Home</a>
+		</li>
+		<li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="index">Goods</a>
+		</li>
+		{% if data['good-name'] %}
+		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['good-name'] }}</li>
+		{% else %}
+		<li class="govuk-breadcrumbs__list-item" aria-current="page">Good name 1</li>
+		{% endif %}
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        {% if data['good-name'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-name'] }}</h1> 
+            {% if data['changeTag1'] %}
+            <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Submitted</span>
+            {% else %}
+            <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
+            {% endif %}
+        {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Good name 1</h1>
+            {% if data['changeTag1'] %}
+            <span class="status-tag status-info govuk-body govuk-!-font-size-14 float-left">Submitted</span>
+            {% else %}
+            <span class="status-tag status-draft govuk-body govuk-!-font-size-14 float-left">Draft</span>
+            {% endif %}
+        {% endif %}
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Used for</dt>
+                {% if data['good-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['good-description'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">A brief description about the intended use for this good.</dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control rating</dt>
+                {% if data['control-rating'] %}
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">AB1</dd>
+                {% endif %}   
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                {% if data['part-number'] %}
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">P/N1-123</dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Type of document</dt>
+                {% if data['document-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['document-description'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">A description about the document that has been attached for this good.</dd>
+                {% endif %}
+            </div>
+        </dl>
+        {% if data['changeTag1'] %}
+        <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#notes">Notes</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#ecju-queries">ECJU queries</a>
+                </li>
+            </ul>
+            <section class="govuk-tabs__panel border-less-tabs" id="notes">
+                <form action="#" method="post">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="good-notes">Is there anything else you want to say about this good?</label>
+                        <textarea class="govuk-textarea" id="good-notes" name="good-notes" rows="5" aria-describedby="good-notes-hint">{{ data['good-notes'] }}</textarea>
+                    </div>	
+                    <button class="govuk-button" data-module="govuk-button">Send message</button>
+                </form>
+            </section>
+            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="ecju-queries">
+                <p class="govuk-body">No messages.</p>
+            </section>
+        </div> 
+        {% else %}
+        <form action="good-1-confirmation" method="post">
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Submit this good</button>
+            <button type="submit" formaction="edit-good-1" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button>
+            <button type="submit" formaction="remove-good-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button>
+        </form>
+        {% endif %}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="info-panel">
+            {% if data['changeTag1'] %}
+            <p class="govuk-body-s govuk-!-margin-bottom-0">This good has been submitted to ECJU, but you can add notes about your good or send a query to ECJU.</p>
+            {% else %}
+            <p class="govuk-body-s govuk-!-margin-bottom-0">This good can be edited or removed. It will remain as a draft until it is submitted to ECJU for a review.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
