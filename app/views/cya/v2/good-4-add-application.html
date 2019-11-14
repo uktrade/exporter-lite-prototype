@@ -15,7 +15,8 @@ Good name 4
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="value-good">Value of good (£)</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="value-good">Value of good (£)</label>
+                    <span id="value-good-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
                     {% if data['value-good'] %}
                     <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" value="{{ data['value-good'] }}">
                     {% else %}

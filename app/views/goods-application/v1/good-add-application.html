@@ -16,7 +16,8 @@ Add to application
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="good-value-application">Value of good (£)</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-value-application">Value of good (£)</label>
+                    <span id="good-value-application-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
                     <input class="govuk-input govuk-!-width-one-half" id="good-value-application" name="good-value-application" type="text" value="{{ data['good-value-application'] }}">
                 </div>
                 <div class="govuk-form-group">
@@ -65,7 +66,7 @@ Add to application
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="info-panel">
-            <span class="status-tag status-draft govuk-body govuk-!-font-size-14 govuk-!-margin-left-0">Not Verified</span>
+            <span class="status-tag status-draft govuk-body govuk-!-font-size-14 govuk-!-margin-left-0">New</span>
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h3>
             <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-name-application'] }} <a href="add-good-application.html#add-good-name-application">Change</a></p> 
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Used for</h3>
