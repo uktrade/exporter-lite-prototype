@@ -2,8 +2,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-    {% if data['good-name'] %}
-    {{ data['good-name'] }}
+    {% if data['good-1-name'] %}
+    {{ data['good-1-name'] }}
     {% else %}
     Good name 1
     {% endif %}
@@ -25,8 +25,8 @@
 		<li class="govuk-breadcrumbs__list-item">
 			<a class="govuk-breadcrumbs__link" href="index">Goods</a>
 		</li>
-		{% if data['good-name'] %}
-		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['good-name'] }}</li>
+		{% if data['good-1-name'] %}
+		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['good-1-name'] }}</li>
 		{% else %}
 		<li class="govuk-breadcrumbs__list-item" aria-current="page">Good name 1</li>
 		{% endif %}
@@ -37,32 +37,32 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        {% if data['good-name'] %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-name'] }}</h1> 
+        {% if data['good-1-name'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['good-1-name'] }}</h1> 
         {% else %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Good name 1</h1>
         {% endif %}
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
-                {% if data['good-description'] %}
-                <dd class="govuk-summary-list__value">{{ data['good-description'] }}</dd>
+                {% if data['good-1-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['good-1-description'] }}</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">A brief description about the intended use for this good.</dd>
                 {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
-                {% if data['control-rating'] %}
-                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                {% if data['good-1-control-rating'] %}
+                <dd class="govuk-summary-list__value">{{ data['good-1-control-rating'] }}</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">AB1</dd>
                 {% endif %}   
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
-                {% if data['part-number'] %}
-                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+                {% if data['good-1-part-number'] %}
+                <dd class="govuk-summary-list__value">{{ data['good-1-part-number'] }}</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">P/N1-123</dd>
                 {% endif %}
@@ -73,14 +73,14 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of document</dt>
-                {% if data['document-description'] %}
-                <dd class="govuk-summary-list__value">{{ data['document-description'] }}</dd>
+                {% if data['good-1-document-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['good-1-document-description'] }}</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">A description about the document that has been attached for this good.</dd>
                 {% endif %}
             </div>
         </dl>
-        <form action="good-1-confirmation" method="post">
+        <form action="good-1-1-confirmation" method="post">
             <button type="submit" formaction="edit-good-1" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit this good</button>
             <button type="submit" formaction="remove-good-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove this good</button>
         </form>

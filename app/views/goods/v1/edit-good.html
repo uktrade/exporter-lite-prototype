@@ -14,7 +14,7 @@ Edit good
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Edit good</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-name">Name of good</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="add-good-name">Name of good</label>
                     <span class="govuk-hint">Use a unique good name so you can recognise this in a big list of similar goods.</span>
                     <input class="govuk-input govuk-!-width-full" id="add-good-name" name="add-good-name" type="text" value="{{ data['add-good-name'] }}">
                 </div>
@@ -32,8 +32,8 @@ Edit good
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="add-control-rating">What is the control list classification?</label>
-                                <input class="govuk-input govuk-!-width-one-half" id="add-control-rating" name="add-control-rating" type="text" value="{{ data['add-control-rating'] }}">
+                                <label class="govuk-label" for="add-good-control-rating">What is the control list classification?</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="add-good-control-rating" name="add-good-control-rating" type="text" value="{{ data['add-good-control-rating'] }}">
                             </div>
                         </div>
                         <div class="govuk-radios__item">
@@ -53,17 +53,17 @@ Edit good
                     </details>
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="add-part-number">Part number (optional)</label>
-                    <input class="govuk-input govuk-!-width-one-half" id="add-part-number" name="add-part-number" type="text" value="{{ data['add-part-number'] }}">
+                    <label class="govuk-label govuk-label--m" for="add-good-part-number">Part number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="add-good-part-number" name="add-good-part-number" type="text" value="{{ data['add-good-part-number'] }}">
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload your good specification</p>
                 <span class="govuk-hint">If you do not have a good specification, you can upload any other document that explains what the good will be used for.</span>
                 <div class="govuk-form-group">
-                    <input class="govuk-file-upload" id="add-file-upload" name="add-file-upload" type="file">
+                    <input class="govuk-file-upload" id="add-good-file-upload" name="add-good-file-upload" type="file">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="add-document-description">What have you uploaded? (optional)</label>
-                    <textarea class="govuk-textarea" id="add-document-description" name="add-document-description" rows="5">{{ data['add-document-description'] }}</textarea>
+                    <label class="govuk-label govuk-label--m" for="add-good-document-description">What have you uploaded? (optional)</label>
+                    <textarea class="govuk-textarea" id="add-good-document-description" name="add-good-document-description" rows="5">{{ data['add-good-document-description'] }}</textarea>
                 </div>	 
             </fieldset>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>

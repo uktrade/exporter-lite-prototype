@@ -64,12 +64,12 @@ Goods
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><a href="good.html" class="govuk-link">{{ data['add-good-name'] }}</a></td>
                         {% if data['add-good-controlled'] == "Yes" %}
-                        <td class="govuk-table__cell">{{ data['add-control-rating'] }}</td>
+                        <td class="govuk-table__cell">{{ data['add-good-control-rating'] }}</td>
                         {% else %}
                         <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
                         {% endif %}
-                        {% if data['add-part-number'] %}
-                        <td class="govuk-table__cell">{{ data['add-part-number'] }}</td>
+                        {% if data['add-good-part-number'] %}
+                        <td class="govuk-table__cell">{{ data['add-good-part-number'] }}</td>
                         {% else %}
                         <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
                         {% endif %}
@@ -81,18 +81,18 @@ Goods
                 <!-- remove table row -->
                 {% else %}
                 <tr class="govuk-table__row">
-                    {% if data['good-name'] %}
-                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">{{ data['good-name'] }}</a></td>
+                    {% if data['good-1-name'] %}
+                    <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">{{ data['good-1-name'] }}</a></td>
                     {% else %}
                     <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
                     {% endif %}
-                    {% if data['control-rating'] %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
+                    {% if data['good-1-control-rating'] %}
+                    <td class="govuk-table__cell">{{ data['good-1-control-rating'] }}</td>
                     {% else %}
                     <td class="govuk-table__cell">AB1</td>
                     {% endif %}
-                    {% if data['part-number'] %}
-                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
+                    {% if data['good-1-part-number'] %}
+                    <td class="govuk-table__cell">{{ data['good-1-part-number'] }}</td>
                     {% else %}
                     <td class="govuk-table__cell">P/N1-123</td>
                     {% endif %}

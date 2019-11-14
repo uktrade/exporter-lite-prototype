@@ -38,23 +38,23 @@
             {% if data['add-good-controlled'] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
-                <dd class="govuk-summary-list__value">{{ data['add-control-rating'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['add-good-control-rating'] }}</dd>
             </div>
             {% endif %}
-            {% if data['add-part-number'] %}
+            {% if data['add-good-part-number'] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
-                <dd class="govuk-summary-list__value">{{ data['add-part-number'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['add-good-part-number'] }}</dd>
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Document</dt>
                 <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
             </div>
-            {% if data['add-document-description'] %}
+            {% if data['add-good-document-description'] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of document</dt>
-                <dd class="govuk-summary-list__value">{{ data['add-document-description'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['add-good-document-description'] }}</dd>
             </div>
             {% endif %}
         </dl>
