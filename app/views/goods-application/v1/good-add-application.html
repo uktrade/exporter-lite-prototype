@@ -69,7 +69,7 @@ Add to application
             <span class="status-tag status-draft govuk-body govuk-!-font-size-14 govuk-!-margin-left-0">New</span>
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h3>
             <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-name-application'] }} <a href="add-good-application.html#add-good-name-application">Change</a></p> 
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Used for</h3>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Description</h3>
             <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-description-application'] }} <a href="add-good-application.html#add-good-description-application">Change</a></p>
             {% if data['add-good-controlled-application'] == "Yes" %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
@@ -82,7 +82,6 @@ Add to application
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Document</h3>
             <p class="govuk-body-s govuk-!-margin-bottom-1"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a> <a href="add-good-application.html#add-file-upload-application">Change</a></p>
             {% if data['add-document-description-application'] %}
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Type of document</h3>
             <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-document-description-application'] }} <a href="add-good-application.html#add-document-description-application">Change</a></p>
             {% endif %}
         </div>
