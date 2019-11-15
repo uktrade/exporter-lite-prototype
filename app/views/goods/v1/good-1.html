@@ -23,7 +23,7 @@
 			<a class="govuk-breadcrumbs__link" href="#">Home</a>
 		</li>
 		<li class="govuk-breadcrumbs__list-item">
-			<a class="govuk-breadcrumbs__link" href="index">Goods</a>
+			<a class="govuk-breadcrumbs__link" href="index">Goods and services</a>
 		</li>
 		{% if data['good-1-name'] %}
 		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['good-1-name'] }}</li>
@@ -44,7 +44,7 @@
         {% endif %}
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Used for</dt>
+                <dt class="govuk-summary-list__key">Description</dt>
                 {% if data['good-1-description'] %}
                 <dd class="govuk-summary-list__value">{{ data['good-1-description'] }}</dd>
                 {% else %}
@@ -53,8 +53,10 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
-                {% if data['good-1-control-rating'] %}
+                {% if data['good-1-controlled'] == "Yes" %}
                 <dd class="govuk-summary-list__value">{{ data['good-1-control-rating'] }}</dd>
+                {% elseif data['good-1-controlled'] == "No" %}
+                <dd class="govuk-summary-list__value">Not controlled</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">AB1</dd>
                 {% endif %}   
@@ -69,14 +71,13 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Document</dt>
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type of document</dt>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a>
                 {% if data['good-1-document-description'] %}
-                <dd class="govuk-summary-list__value">{{ data['good-1-document-description'] }}</dd>
+                    <p class="govuk-body govuk-!-margin-top-4">{{ data['good-1-document-description'] }}</p>
+                </dd>
                 {% else %}
-                <dd class="govuk-summary-list__value">A description about the document that has been attached for this good.</dd>
+                    <p class="govuk-body govuk-!-margin-top-4">A description about the document that has been attached for this good.</p>
+                </dd>
                 {% endif %}
             </div>
         </dl>

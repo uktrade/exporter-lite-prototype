@@ -19,7 +19,7 @@
 			<a class="govuk-breadcrumbs__link" href="#">Home</a>
 		</li>
 		<li class="govuk-breadcrumbs__list-item">
-			<a class="govuk-breadcrumbs__link" href="index">Goods</a>
+			<a class="govuk-breadcrumbs__link" href="index">Goods and services</a>
 		</li>
 		<li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['add-good-name'] }}</li>
     </ol>
@@ -32,13 +32,19 @@
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['add-good-name'] }}</h1> 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Used for</dt>
+                <dt class="govuk-summary-list__key">Description</dt>
                 <dd class="govuk-summary-list__value">{{ data['add-good-description'] }}</dd>
             </div>
             {% if data['add-good-controlled'] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
                 <dd class="govuk-summary-list__value">{{ data['add-good-control-rating'] }}</dd>
+            </div>
+            {% endif %}
+            {% if data['add-good-controlled'] == "No" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control rating</dt>
+                <dd class="govuk-summary-list__value">Not controlled</dd>
             </div>
             {% endif %}
             {% if data['add-good-part-number'] %}
@@ -49,12 +55,13 @@
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Document</dt>
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a>
+                {% if data['add-good-document-description'] %}
+                    <p class="govuk-body govuk-!-margin-top-4">{{ data['add-good-document-description'] }}</p>
+                </dd>
             </div>
-            {% if data['add-good-document-description'] %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type of document</dt>
-                <dd class="govuk-summary-list__value">{{ data['add-good-document-description'] }}</dd>
+                {% else %}
+                </dd>
             </div>
             {% endif %}
         </dl>

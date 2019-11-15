@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Goods
+Goods and services
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@ Goods
         href: "#"
       },
       {
-        text: "Goods"
+        text: "Goods and services"
       }
     ]
   }) }}
@@ -28,9 +28,9 @@ Goods
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">  
-        <h1 class="govuk-heading-l float-left">Goods</h1>
+        <h1 class="govuk-heading-l float-left">Goods and services</h1>
         <div class="float-right">
-            <a href="add-good.html"><button class="govuk-button" data-module="govuk-button">Add a good</button></a>
+            <a href="add-good.html"><button class="govuk-button" data-module="govuk-button">Add new</button></a>
         </div>
 
         <form action="search-results" method="post" class="clearfix" autocomplete="off">
@@ -41,9 +41,9 @@ Goods
         </form>
 
         {% if data['addGood'] %}
-        <h2 class="govuk-heading-m clearfix">You have 58 goods</h2>
+        <h2 class="govuk-heading-m clearfix">You have 58 goods and services</h2>
         {% else %}
-        <h2 class="govuk-heading-m clearfix">You have 57 goods</h2>
+        <h2 class="govuk-heading-m clearfix">You have 57 goods and services</h2>
         {% endif %}    
 
         <table class="govuk-table govuk-!-margin-bottom-3">
@@ -65,6 +65,8 @@ Goods
                         <td class="govuk-table__cell"><a href="good.html" class="govuk-link">{{ data['add-good-name'] }}</a></td>
                         {% if data['add-good-controlled'] == "Yes" %}
                         <td class="govuk-table__cell">{{ data['add-good-control-rating'] }}</td>
+                        {% elseif data['add-good-controlled'] == "No" %}
+                        <td class="govuk-table__cell">Not controlled</td>
                         {% else %}
                         <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
                         {% endif %}
@@ -100,7 +102,7 @@ Goods
                 {% endif %}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="good-2.html" class="govuk-link">Good name 2</a></td>
-                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                    <td class="govuk-table__cell">Not controlled</td>
                     <td class="govuk-table__cell">P/N2-123</td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -166,7 +168,7 @@ Goods
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="#" class="govuk-link">Good name 15</a></td>
-                    <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                    <td class="govuk-table__cell">Not controlled</td>
                     <td class="govuk-table__cell">P/N15-123</td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -351,9 +353,9 @@ Goods
         </table>
         <div class="pagination">
             {% if data['addGood'] %}
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>58</strong> goods</div>
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>58</strong></div>
             {% else %}
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>57</strong> goods</div>
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> – <strong>50</strong> of <strong>57</strong></div>
             {% endif %}
             <ul class="pager-items govuk-body">
                 <li>1</li>

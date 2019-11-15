@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a good
+Add new goods or services to your database
 {% endblock %}
 
 {% block content %}
@@ -12,19 +12,17 @@ Add a good
             <input type="hidden" name="addGood" value="true">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a good</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add new goods or services to your database</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="add-good-name">Name of good</label>
-                    <span class="govuk-hint govuk-!-margin-bottom-2">Use a unique good name so you can recognise this in a big list of similar goods.</span>
+                    <label class="govuk-label govuk-label--m" for="add-good-name">Name</label>
                     <input class="govuk-input govuk-!-width-full" id="add-good-name" name="add-good-name" type="text" value="{{ data['add-good-name'] }}">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="add-good-description">What does your good do?</label>
-                    <textarea class="govuk-textarea" id="add-good-description" name="add-good-description" rows="5" aria-describedby="add-good-description-hint">{{ data['add-good-description'] }}</textarea>
+                    <label class="govuk-label govuk-label--m" for="add-good-description">Description</label>
+                    <textarea class="govuk-textarea" id="add-good-description" name="add-good-description" rows="5">{{ data['add-good-description'] }}</textarea>
                 </div>	
-                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your good controlled?</p>
-                <span class="govuk-hint govuk-!-margin-bottom-2">Controlled goods are ones that pose a security risk. You need a licence to export a controlled good.</span>
+                <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Is it controlled?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
@@ -33,37 +31,46 @@ Add a good
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="add-good-control-rating">What is the control list classification?</label>
+                                <label class="govuk-label" for="add-good-control-rating">Control list classification</label>
                                 <input class="govuk-input govuk-!-width-one-half" id="add-good-control-rating" name="add-good-control-rating" type="text" value="{{ data['add-good-control-rating'] }}">
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="add-good-controlled-no" name="add-good-controlled" type="radio" value="No" {{ checked("add-good-controlled", "No") }}>
-                            <label class="govuk-label govuk-radios__label" for="add-good-controlled-no">No</label>
+                            <input class="govuk-radios__input" id="no-conditional" name="add-good-controlled" type="radio" value="No" {{ checked("add-good-controlled", "No") }} data-aria-controls="conditional-no-conditional">
+                            <label class="govuk-label govuk-radios__label" for="no-conditional">No</label>
                         </div>	
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no-conditional">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">Goods and services that aren't on the <a class="govuk-link" href="https://permissions-finder.lite.service.staging.uktrade.io/" target="_blank">control list</a> may be affected by:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/export-controls-military-goods-software-and-technology" target="_blank">military end use controls</a></li>
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/current-arms-embargoes-and-other-restrictions" target="_blank">current trade sanctions and embargoes</a></li>
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/supplementary-wmd-end-use-controls" target="_blank">weapons of mass destruction controls</a></li>
+                                </ul>
+                                <p class="govuk-body">If your goods and services aren't subject to any controls, you'll get a no licence required (NLR) document from ECJU.</p>
+                            </div>
+                        </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="add-good-controlled-unsure" name="add-good-controlled" type="radio" value="Not sure" {{ checked("add-good-controlled", "Not sure") }}>
-                            <label class="govuk-label govuk-radios__label" for="add-good-controlled-unsure">Not sure</label>
+                            <input class="govuk-radios__input" id="unsure-conditional" name="add-good-controlled" type="radio" value="Not sure" {{ checked("add-good-controlled", "Not sure") }} data-aria-controls="conditional-unsure-conditional">
+                            <label class="govuk-label govuk-radios__label" for="unsure-conditional">Not sure</label>
                         </div>	
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-unsure-conditional">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">Selecting ‘not sure’ will send a control list classification query to ECJU.</p>
+                            </div>
+                        </div>
                     </div>
-                    <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">I am not sure if my good is controlled</span>
-                        </summary>
-                        <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank" class="govuk-link">find out if your good is controlled</a> using another GOV.UK service (Check if you need an export licence).<br /><br />If your good is controlled, you will be given a control code to answer this question.</div>
-                    </details>
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="add-good-part-number">Part number (optional)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="add-good-part-number" name="add-good-part-number" type="text" value="{{ data['add-good-part-number'] }}">
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload your good specification</p>
-                <span class="govuk-hint govuk-!-margin-bottom-2">If you do not have a good specification, you can upload any other document that explains what the good will be used for.</span>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload document</p>
                 <div class="govuk-form-group">
                     <input class="govuk-file-upload" id="add-good-file-upload" name="add-good-file-upload" type="file">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="add-good-document-description">What have you uploaded? (optional)</label>
+                    <label class="govuk-label govuk-label--m" for="add-good-document-description">Document description (optional)</label>
                     <textarea class="govuk-textarea" id="add-good-document-description" name="add-good-document-description" rows="5">{{ data['add-good-document-description'] }}</textarea>
                 </div>	 
             </fieldset>
