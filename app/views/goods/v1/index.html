@@ -68,7 +68,7 @@ Goods and services
                         {% elseif data['add-good-controlled'] == "No" %}
                         <td class="govuk-table__cell">Not controlled</td>
                         {% else %}
-                        <td class="govuk-table__cell"><span class="grey-text">N/A</span></td>
+                        <td class="govuk-table__cell">Control list classification query sent</td>
                         {% endif %}
                         {% if data['add-good-part-number'] %}
                         <td class="govuk-table__cell">{{ data['add-good-part-number'] }}</td>
@@ -88,8 +88,12 @@ Goods and services
                     {% else %}
                     <td class="govuk-table__cell"><a href="good-1.html" class="govuk-link">Good name 1</a></td>
                     {% endif %}
-                    {% if data['good-1-control-rating'] %}
+                    {% if data['good-1-controlled'] == "Yes" %}
                     <td class="govuk-table__cell">{{ data['good-1-control-rating'] }}</td>
+                    {% elseif data['good-1-controlled'] == "No" %}
+                    <td class="govuk-table__cell">Not controlled</td>
+                    {% elseif data['good-1-controlled'] == "Not sure" %}
+                    <td class="govuk-table__cell">Control list classification query sent</td>
                     {% else %}
                     <td class="govuk-table__cell">AB1</td>
                     {% endif %}

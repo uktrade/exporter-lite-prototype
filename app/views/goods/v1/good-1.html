@@ -57,6 +57,8 @@
                 <dd class="govuk-summary-list__value">{{ data['good-1-control-rating'] }}</dd>
                 {% elseif data['good-1-controlled'] == "No" %}
                 <dd class="govuk-summary-list__value">Not controlled</dd>
+                {% elseif data['good-1-controlled'] == "Not sure" %}
+                <dd class="govuk-summary-list__value">Control list classification query sent</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">AB1</dd>
                 {% endif %}   
