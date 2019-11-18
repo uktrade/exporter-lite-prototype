@@ -2,30 +2,26 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Goods in application
+Goods and services on the application
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">  
         <span class="govuk-caption-l">Add goods and services</span>
-        <h1 class="govuk-heading-l float-left">Goods in application</h1>
+        <h1 class="govuk-heading-l float-left">Goods and services on the application</h1>
         <form action="index" method="post">
             <div class="float-right">
-                {% if data['removeGoodApplication'] and data['removeGood3Application'] %}
-                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add a good to application</button>
-                {% else %}
-                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add another good to application</button>
-                {% endif %}
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add an item</button>
             </div>
             
             {% if data['removeGoodApplication'] or data['removeGood3Application'] %}
-            <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
+            <h2 class="govuk-heading-m clearfix">1 item added</h2>
             {% else %}
                 {% if data['goodAddApplication'] and data['goodAdd3Application'] %}
-                <h2 class="govuk-heading-m clearfix">You have added 2 goods</h2>
+                <h2 class="govuk-heading-m clearfix">2 items added</h2>
                 {% else %}
-                <h2 class="govuk-heading-m clearfix">You have added 1 good</h2>
+                <h2 class="govuk-heading-m clearfix">1 item added</h2>
                 {% endif %}
             {% endif %}
 
