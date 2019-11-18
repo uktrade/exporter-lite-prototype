@@ -67,22 +67,31 @@ Add to application
     <div class="govuk-grid-column-one-third">
         <div class="info-panel">
             <span class="status-tag status-draft govuk-body govuk-!-font-size-14 govuk-!-margin-left-0">New</span>
+            <span class="float-right govuk-body govuk-!-font-size-16 govuk-!-margin-left-0"><a href="add-good-application.html">Edit</a></span>
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-name-application'] }} <a href="add-good-application.html#add-good-name-application">Change</a></p> 
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-name-application'] }} <!-- <a href="add-good-application.html#add-good-name-application">Change</a> --></p> 
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Description</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-description-application'] }} <a href="add-good-application.html#add-good-description-application">Change</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-good-description-application'] }} <!-- <a href="add-good-application.html#add-good-description-application">Change</a> --></p>
             {% if data['add-good-controlled-application'] == "Yes" %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-control-rating-application'] }} <a href="add-good-application.html#add-good-controlled-application">Change</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-control-rating-application'] }} <!-- <a href="add-good-application.html#add-good-controlled-application">Change</a> --></p>
+            {% endif %}
+            {% if data['add-good-controlled-application'] == "No" %}
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Not controlled <!-- <a href="add-good-application.html#add-good-controlled-application">Change</a> --></p>
+            {% endif %}
+            {% if data['add-good-controlled-application'] == "Not sure" %}
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Control list classification query sent <!-- <a href="add-good-application.html#add-good-controlled-application">Change</a> --></p>
             {% endif %}
             {% if data['add-part-number-application'] %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Part number</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-part-number-application'] }} <a href="add-good-application.html#add-part-number-application">Change</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-part-number-application'] }} <!-- <a href="add-good-application.html#add-part-number-application">Change</a> --></p>
             {% endif %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Document</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a> <a href="add-good-application.html#add-file-upload-application">Change</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a> <!-- <a href="add-good-application.html#add-file-upload-application">Change</a> --></p>
             {% if data['add-document-description-application'] %}
-            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-document-description-application'] }} <a href="add-good-application.html#add-document-description-application">Change</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['add-document-description-application'] }} <!-- <a href="add-good-application.html#add-document-description-application">Change</a> --></p>
             {% endif %}
         </div>
     </div>
