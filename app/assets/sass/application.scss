@@ -358,9 +358,42 @@ th {
     font-weight: normal;
 }
 
+.currency-input {
+    position: relative;
+}
+
+.currency-input input {
+    padding-left: 40px;
+}
+
+.currency-input-symbol {
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px; 
+    /* font-size: 1rem; */
+    line-height: 1.25;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    padding: 8px 10px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: #f3f2f1;
+    border: 2px solid #0b0c0c;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
+    }
+
+    .currency-input-symbol {
+        font-size: 19px;
+        /* font-size: 1.1875rem; 
+        line-height: 1.31579; */
+        line-height: 1.15;
     }
 }
 

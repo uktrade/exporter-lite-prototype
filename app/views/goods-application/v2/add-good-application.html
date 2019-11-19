@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add new goods or services to your application
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="good-add-application" method="post" autocomplete="off">
+            <input type="hidden" name="addGoodApplication" value="true">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Add goods and services</span>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add new goods or services to your application</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-good-name-application">Name</label>
+                    <input class="govuk-input govuk-!-width-full" id="add-good-name-application" name="add-good-name-application" type="text" value="{{ data['add-good-name-application'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-good-description-application">Description</label>
+                    <textarea class="govuk-textarea" id="add-good-description-application" name="add-good-description-application" rows="5">{{ data['add-good-description-application'] }}</textarea>
+                </div>	
+                <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Is it controlled?</p>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-conditional" name="add-good-controlled-application" type="radio" value="Yes" {{ checked("add-good-controlled-application", "Yes") }} data-aria-controls="conditional-yes-conditional">
+                            <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="add-control-rating-application">Control list classification</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="add-control-rating-application" name="add-control-rating-application" type="text" value="{{ data['add-control-rating-application'] }}">
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="no-conditional" name="add-good-controlled-application" type="radio" value="No" {{ checked("add-good-controlled-application", "No") }} data-aria-controls="conditional-no-conditional">
+                            <label class="govuk-label govuk-radios__label" for="no-conditional">No</label>
+                        </div>	
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no-conditional">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">Goods and services that aren't on the <a class="govuk-link" href="https://permissions-finder.service.trade.gov.uk/" target="_blank">control list</a> may be affected by:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/export-controls-military-goods-software-and-technology" target="_blank">military end use controls</a></li>
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/current-arms-embargoes-and-other-restrictions" target="_blank">current trade sanctions and embargoes</a></li>
+                                    <li><a class="govuk-link" href="https://www.gov.uk/guidance/supplementary-wmd-end-use-controls" target="_blank">weapons of mass destruction controls</a></li>
+                                </ul>
+                                <p class="govuk-body">If your goods and services aren't subject to any controls, you'll get a no licence required (NLR) document from ECJU.</p>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="unsure-conditional" name="add-good-controlled-application" type="radio" value="Not sure" {{ checked("add-good-controlled-application", "Not sure") }} data-aria-controls="conditional-unsure-conditional">
+                            <label class="govuk-label govuk-radios__label" for="unsure-conditional">Not sure</label>
+                        </div>	
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-unsure-conditional">
+                            <div class="govuk-form-group">
+                                <p class="govuk-body">Selecting ‘not sure’ will send a control list classification query to ECJU.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-part-number-application">Part number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="add-part-number-application" name="add-part-number-application" type="text" value="{{ data['add-part-number-application'] }}">
+                </div>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload document</p>
+                <div class="govuk-form-group">
+                    <input class="govuk-file-upload" id="add-file-upload-application" name="add-file-upload-application" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="add-document-description-application">Document description (optional)</label>
+                    <textarea class="govuk-textarea" id="add-document-description-application" name="add-document-description-application" rows="5">{{ data['add-document-description-application'] }}</textarea>
+                </div>	 
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="info-panel">
+            <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-0">All goods and services go through the ECJU verification process.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
