@@ -16,10 +16,14 @@ Add to application
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-1-value-application">Value (£)</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-1-value-application">Value</label>
+                    <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
                     <span id="good-1-value-application-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
-                    <input class="govuk-input govuk-!-width-one-half" id="good-1-value-application" name="good-1-value-application" type="text" value="{{ data['good-1-value-application'] }}">
-                </div>
+                    <div class="currency-input">
+                        <div class="currency-input-symbol" aria-hidden="true">£</div>
+                        <input class="govuk-input govuk-!-width-one-half" id="good-1-value-application" name="good-1-value-application" type="text" aria-describedby="amount-currency" value="{{ data['good-1-value-application'] }}">
+                    </div>
+                </div> 
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="good-1-quantity-application">Quantity</label>
                     <span id="good-1-quantity-application-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>

@@ -15,14 +15,18 @@ Good name 4
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="value-good">Value (£)</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="value-good">Value</label>
+                    <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
                     <span id="value-good-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
-                    {% if data['value-good'] %}
-                    <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" value="{{ data['value-good'] }}">
-                    {% else %}
-                    <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" value="40,000,000.00">
-                    {% endif %}
-                </div>
+                    <div class="currency-input">
+                        <div class="currency-input-symbol" aria-hidden="true">£</div>
+                        {% if data['value-good'] %}
+                        <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" aria-describedby="amount-currency" value="{{ data['value-good'] }}">
+                        {% else %}
+                        <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" aria-describedby="amount-currency" value="40,000,000.00">
+                        {% endif %}
+                    </div>
+                </div> 
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="quantity">Quantity</label>
                     <span id="quantity-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
