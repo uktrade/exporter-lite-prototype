@@ -5,212 +5,107 @@
 ABC Exporters Ltd
 {% endblock %}
 
+<!-- A different version of the service header, navigation and beta section -->
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu"
+  }) }}
+{% endblock %}
 {% block beforeContent %}
-  {{ govukPhaseBanner({
+<div class="navigation">
+    <a href="#" class="home-link">Account home</a>
+    <ul class="nav-items">
+        <li><a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Check if I need a licence</a></li>
+        <li><a href="#" class="more-link" data-box="menu">Your account</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div>
+<div class="box menu">
+    <div class="home-panel clearfix">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Organisation details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your goods and services</a></li>
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your sites</a></li>
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your organisation's details</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Team settings</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your team</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Personal details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Update your personal details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
+    classes: "home-beta",
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 {% endblock %}
+<!-- A different version of the service header, navigation and beta section -->
 
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">ABC Exporters Ltd</h1>
-        <a href="#" class="govuk-button">Apply for an export licence</a>
-        <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2">Applications</h2>
-        <hr class="govuk-section-break govuk-section-break--visible thick-blue-border govuk-!-margin-bottom-6">
-        <div class="govuk-tabs govuk-!-margin-bottom-7" data-module="govuk-tabs">
-            <h2 class="govuk-tabs__title">Contents</h2>
-            <ul class="govuk-tabs__list">
-                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                    <a class="govuk-tabs__tab no-underline" href="#completed">Completed&nbsp;&nbsp;&nbsp;<span class="small-banner-double">22</span></a>
-                </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab no-underline" href="#in-progress">In progress&nbsp;&nbsp;&nbsp;<span class="small-banner">6</span></a>
-                </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab no-underline" href="#drafts">Drafts&nbsp;&nbsp;&nbsp;<span class="small-banner-double">10</span></a>
-                </li>
-            </ul>
-            <section class="govuk-tabs__panel border-less-tabs" id="completed">
-                <table class="govuk-table govuk-!-margin-bottom-4">
-                    <caption class="govuk-table__caption hidden">TBC</caption>
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Your reference</th>
-                            <th scope="col" class="govuk-table__header">Our reference</th>
-                            <th scope="col" class="govuk-table__header">Last updated</th>
-                            <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Rejected</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View all completed applications</a></p>
-            </section>
-            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="in-progress">
-                <table class="govuk-table govuk-!-margin-bottom-4">
-                    <caption class="govuk-table__caption hidden">TBC</caption>
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Title</th>
-                            <th scope="col" class="govuk-table__header">Title</th>
-                            <th scope="col" class="govuk-table__header">Title</th>
-                            <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Rejected</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View all in progress applications</a></p>
-            </section>
-            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="drafts">
-                <table class="govuk-table govuk-!-margin-bottom-4">
-                    <caption class="govuk-table__caption hidden">TBC</caption>
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Your reference</th>
-                            <th scope="col" class="govuk-table__header">Created on</th>
-                            <th scope="col" class="govuk-table__header">Goods</th>
-                            <th scope="col" class="govuk-table__header">Licence type</th>
-                            <th scope="col" class="govuk-table__header">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">2 October 2019</td>
-                            <td class="govuk-table__cell">0</td>
-                            <td class="govuk-table__cell">Standard</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Open</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Standard</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Standard</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">text</td>
-                            <td class="govuk-table__cell">Standard</td>
-                            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View all draft applications</a></p>
-            </section>
-        </div>
-        <div class="govuk-grid-row govuk-!-margin-bottom-7">
-            <div class="govuk-grid-column-one-half">
-                <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2">Goods</h2>
-                <hr class="govuk-section-break govuk-section-break--visible thick-blue-border govuk-!-margin-bottom-6">
-                <!-- <ul class="govuk-list govuk-!-margin-bottom-0">
-                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Add a new product</a></li>
-                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">View all products</a></li>
-                </ul> -->
-                <p class="govuk-body">TBC</p>
+        <span class="govuk-caption-l">Account home</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">ABC Exporters Ltd</h1>
+        
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <a href="#" class="card-block-link">
+                    <div class="card">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Apply</h3>
+                        <p class="govuk-body-s">Apply for:</p>
+                        <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                            <li>export licences</li>
+                            <li>trade control licences</li>
+                            <li>transhipment licences</li>
+                            <li>MoD clearances </li>
+                        </ul>
+                        <p class="govuk-body-s">Register for open general export licences (OGELs).</p>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0"><a href="#" class="govuk-link govuk-link--no-visited-state">Draft applications</a></p>
+                    </div>
+                </a>
             </div>
-            <div class="govuk-grid-column-one-half">
-                <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2">Sites</h2>
-                <hr class="govuk-section-break govuk-section-break--visible thick-blue-border govuk-!-margin-bottom-6">
-                <!-- <ul class="govuk-list govuk-!-margin-bottom-0">
-                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Add a new site</a></li>
-                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">View all sites</a></li>
-                </ul> -->
-                <p class="govuk-body">TBC</p>
+            <div class="govuk-grid-column-one-third">
+                <a href="#" class="card-block-link">
+                    <div class="card">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Check progress</h3>
+                        <p class="govuk-body-s">View the status of your applications and registrations.</p>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">Edit submitted applications.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <a href="#" class="card-block-link">
+                    <div class="card">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Licences and clearances</h3>
+                        <p class="govuk-body-s govuk-!-margin-bottom-0">View and manage your licences and clearances, including partially granted and unsuccessful applications.</p>
+                    </div>
+                </a>
             </div>
         </div>
+
+
+
     </div>
 </div>
 {% endblock %}

@@ -384,6 +384,109 @@ th {
     border: 2px solid #0b0c0c;
 }
 
+.home-beta {
+    clear: both;
+    border-bottom: none;
+}
+
+.navigation {
+    position: relative;
+    border-bottom: 1px solid #bfc1c3;
+    width: 100%;
+    float: left; 
+}
+
+.home-link {
+    color: #0b0c0c !important;
+    float: left;
+    display: inline-block;
+    padding: 12px 16px 8px 22px;
+    text-decoration: none;
+    border-bottom: 4px solid #1d70b8;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWlkIj48dGl0bGU+aWNvbi1ob21lPC90aXRsZT48cGF0aCBkPSJNMTIgMkwxIDEyLjVoMy4xOXY5LjM4aDUuNDR2LTcuMTNoNC41djcuMTNoNS40NFYxMi41SDIzTDEyIDJ6Ii8+PC9zdmc+);
+    background-position: left 10px;
+    background-size: 19px;
+    background-repeat: no-repeat;
+}
+
+.nav-items {
+    float: right;
+    margin: 0;
+}
+
+.nav-items li {
+    float: left;
+    list-style: none;
+    display: inline-block;
+    border-bottom: 4px solid transparent;
+}
+
+.nav-items li:hover {
+    border-bottom: 4px solid rgba(177,180,182,0.5);
+}
+
+.nav-items li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0b0c0c;
+    padding: 12px 16px 8px 16px;
+}
+
+.nav-items li a:hover {
+    color: #1d70b8;
+}
+
+.nav-items li .more-link {
+    background-image: url("../images/icon-chevron-down.svg");
+    background-position: right 14px center;
+    background-size: 12px;
+    padding-right: 31px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.box {
+    display: none;
+}
+
+.home-panel {
+    clear: both;
+    border-bottom: 1px solid #bfc1c3;
+    padding: 20px 40px;
+    background: #f3f2f1;
+}
+
+.home-panel a {
+    text-decoration: none;
+}
+
+.home-panel a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    border: 1px solid #bfc1c3;
+    background: #f3f2f1;
+    padding: 15px; 
+    min-height: 300px;
+}
+
+.card-block-link {
+    text-decoration: none;
+    display: block;
+}
+
+.card-block-link h3 {
+    color: #1d70b8;
+}
+
+.card-block-link :hover {
+    /*background: #1d70b8 !important; 
+    color: #fff !important;*/   
+}
+
+
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
