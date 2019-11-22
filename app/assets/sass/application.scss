@@ -402,7 +402,8 @@ th {
     display: inline-block;
     padding: 12px 16px 8px 22px;
     text-decoration: none;
-    border-bottom: 4px solid #1d70b8;
+    /* border-bottom: 4px solid #1d70b8; */
+    border-bottom: 4px solid #bfc1c3;
     background-image: url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWlkIj48dGl0bGU+aWNvbi1ob21lPC90aXRsZT48cGF0aCBkPSJNMTIgMkwxIDEyLjVoMy4xOXY5LjM4aDUuNDR2LTcuMTNoNC41djcuMTNoNS40NFYxMi41SDIzTDEyIDJ6Ii8+PC9zdmc+);
     background-position: left 10px;
     background-size: 19px;
@@ -422,7 +423,8 @@ th {
 }
 
 .nav-items li:hover {
-    border-bottom: 4px solid rgba(177,180,182,0.5);
+    /* border-bottom: 4px solid rgba(177,180,182,0.5); */
+    border-bottom: 4px solid #bfc1c3;
 }
 
 .nav-items li a {
@@ -465,7 +467,8 @@ th {
 }
 
 .card {
-    border: 1px solid #bfc1c3;
+    /* border: 1px solid #bfc1c3; */
+    border-top: 5px solid #1d70b8;
     background: #f3f2f1;
     padding: 15px; 
     min-height: 300px;
