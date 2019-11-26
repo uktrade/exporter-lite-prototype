@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ABC Exporters Ltd
+{% endblock %}
+
+<!-- A different version of the service header, navigation and beta section -->
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+<div class="navigation">
+    <a href="index.html" class="home-link no-border">Account home</a>
+    <ul class="nav-items">
+        <li><a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Check if I need a licence</a></li>
+        <li class="selected-link"><a href="your-account.html">Your account</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div>
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    classes: "home-beta",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+<!-- A different version of the service header, navigation and beta section -->
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Your account</h1>     
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Organisation details</h2>
+        <ul class="govuk-list">
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your sites</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your organisation's details</a></li>
+        </ul>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Team settings</h2>
+        <ul class="govuk-list">
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your team</a></li>
+        </ul>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Personal details</h2>
+        <ul class="govuk-list">
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Update your personal details</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
