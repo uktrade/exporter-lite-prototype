@@ -488,6 +488,24 @@ th {
     color: #fff !important;*/   
 }
 
+.notification-tag {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #d4351c;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    margin: 0 0 0 10px;
+    border-radius: 22px;
+    display: inline-block;
+    margin-top: 3pxx
+}
+
+.notification-tag span {
+    vertical-align: middle;
+}
+
 
 
 @media (min-width: 40.0625em) { /* 641px or more */
