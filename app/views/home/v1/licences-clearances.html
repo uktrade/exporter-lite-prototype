@@ -1,0 +1,127 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Licences and clearances
+{% endblock %}
+
+<!-- A different version of the service header, navigation and beta section -->
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+<div class="navigation">
+    <a href="index.html" class="home-link no-border">Account home</a>
+    <ul class="nav-items">
+        <li><a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Check if I need a licence</a></li>
+        <li><a href="#" class="more-link" data-box="menu">Your account</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div>
+<div class="box menu">
+    <div class="home-panel clearfix govuk-!-margin-bottom-4">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Organisation details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your sites</a></li>
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your organisation's details</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Team settings</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your team</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Personal details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Update your personal details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    classes: "home-beta",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+{% endblock %}
+<!-- A different version of the service header, navigation and beta section -->
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">  
+        <h1 class="govuk-heading-l float-left">Licences and clearances</h1>
+
+        <!-- <form action="search-results" method="post" class="clearfix" autocomplete="off">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="search-goods">Search by name, control list classification or part number</label>
+                <input class="govuk-input search-icon" id="search-goods" name="search-goods" type="search">
+            </div>
+        </form> -->
+
+        <h2 class="govuk-heading-m clearfix">You have 5 xxxxxxx</h2> 
+
+        <table class="govuk-table govuk-!-margin-bottom-6">
+            <caption class="govuk-table__caption hidden">Reference, application type, last updated and status</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Reference <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Type <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Received date <span class="small-font">&#9660;</span></a></th>
+                    <th scope="col" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state no-underline">Status <span class="small-font">&#9660;</span></a></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">26112019-ABCEXP</a></td>
+                    <td class="govuk-table__cell">Export licence (standard)</td>
+                    <td class="govuk-table__cell">26 November 2019</td>
+                    <td class="govuk-table__cell">Granted</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link float-left">26112019-ABCTRA</a></td>
+                    <td class="govuk-table__cell">Trade control licence</td>
+                    <td class="govuk-table__cell">26 November 2019</td>
+                    <td class="govuk-table__cell">Partially granted</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link float-left">26112019-ABCMOD</a></td>
+                    <td class="govuk-table__cell">MoD clearance</td>
+                    <td class="govuk-table__cell">26 November 2019</td>
+                    <td class="govuk-table__cell">Granted</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">26112019-ABCOGE</a></td>
+                    <td class="govuk-table__cell">Open general export licence</td>
+                    <td class="govuk-table__cell">26 November 2019</td>
+                    <td class="govuk-table__cell">Granted</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">26112019-ABCTRA</a></td>
+                    <td class="govuk-table__cell">Transhipment licence</td>
+                    <td class="govuk-table__cell">26 November 2019</td>
+                    <td class="govuk-table__cell">Granted</td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+{% endblock %}
