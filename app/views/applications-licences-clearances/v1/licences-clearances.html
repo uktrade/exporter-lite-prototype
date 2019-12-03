@@ -5,6 +5,49 @@
 Licences and clearances
 {% endblock %}
 
+{% block beforeContent %}
+<div class="navigation">
+    <a href="index.html" class="home-link no-border">Account home</a>
+    <ul class="nav-items">
+        <li><a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Check if I need a licence</a></li>
+        <li><a href="#" class="more-link" data-box="menu">Your account</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div>
+<div class="box menu">
+    <div class="home-panel clearfix govuk-!-margin-bottom-4">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Organisation details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your sites</a></li>
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your organisation's details</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Team settings</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your team</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Personal details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Update your personal details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    classes: "home-beta",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">  
