@@ -46,6 +46,10 @@ Applications
     classes: "home-beta",
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
 {% endblock %}
 
 {% block content %}
