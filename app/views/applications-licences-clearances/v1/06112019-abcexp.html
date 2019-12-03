@@ -1,0 +1,152 @@
+
+{% extends "layout_account.html" %}
+
+{% block pageTitle %}
+06112019-ABCEXP
+{% endblock %}
+
+{% block beforeContent %}
+<div class="navigation">
+    <a href="index.html" class="home-link no-border">Account home</a>
+    <ul class="nav-items">
+        <li><a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Check if I need a licence</a></li>
+        <li><a href="#" class="more-link" data-box="menu">Your account</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div>
+<div class="box menu">
+    <div class="home-panel clearfix govuk-!-margin-bottom-4">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Organisation details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your sites</a></li>
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your organisation's details</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Team settings</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your team</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-s govuk-!-margin-bottom-1">Personal details</p>
+                <ul class="govuk-list govuk-body-s">
+                    <li><a href="#" class="govuk-link govuk-link--no-visited-state">Update your personal details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    classes: "home-beta",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">  
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">06112019-ABCEXP</h1>
+        <h2 class="govuk-heading-m font-normal">Open licence</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6">
+        <h2 class="govuk-heading-m">Application summary</h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is it?</dt>
+                <dd class="govuk-summary-list__value">Military laser name 1</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Where is it going?</dt>
+                <dd class="govuk-summary-list__value">Chile</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Who is it going to?</dt>
+                <dd class="govuk-summary-list__value">CHI Importers</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Decision</dt>
+                <dd class="govuk-summary-list__value">Granted</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Licence</dt>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
+            </div>
+        </dl>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is it?</dt>
+                <dd class="govuk-summary-list__value">Military laser name 1</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Where is it going?</dt>
+                <dd class="govuk-summary-list__value">Australia</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Who is it going to?</dt>
+                <dd class="govuk-summary-list__value">AUS Importers</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Decision</dt>
+                <dd class="govuk-summary-list__value">No licence required</dd>
+            </div>
+        </dl>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is it?</dt>
+                <dd class="govuk-summary-list__value">Military laser name 2</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Where is it going?</dt>
+                <dd class="govuk-summary-list__value">Chile</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Who is it going to?</dt>
+                <dd class="govuk-summary-list__value">CHI Importers</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Decision</dt>
+                <dd class="govuk-summary-list__value">Refused</dd>
+            </div>
+        </dl>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is it?</dt>
+                <dd class="govuk-summary-list__value">Military laser name 2</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Where is it going?</dt>
+                <dd class="govuk-summary-list__value">Australia</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Who is it going to?</dt>
+                <dd class="govuk-summary-list__value">AUS Importers</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Decision</dt>
+                <dd class="govuk-summary-list__value">Granted</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Licence</dt>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></dd>
+            </div>
+        </dl>
+
+        <form action="#" method="post">
+            <button type="submit" formaction="#" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">View application</button>
+            <button type="submit" formaction="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">Duplicate application</button>
+        </form>
+	</div>
+</div>
+{% endblock %}
