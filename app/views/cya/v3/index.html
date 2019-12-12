@@ -11,7 +11,7 @@ Check your answers before sending your application
         <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
         <h2 class="govuk-heading-m">Application details</h2>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+		<dl class="govuk-summary-list govuk-!-margin-bottom-0">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Reference</dt>
                 {% if data['reference-application'] %}
@@ -23,11 +23,13 @@ Check your answers before sending your application
                     <a class="govuk-link" href="application-reference.html">Change<span class="govuk-visually-hidden"> reference</span></a> 
                 </dd>
             </div> 
+        </dl>
+        <!-- To enable the omission of the last dd tag and to fix responsive issue -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Export type</dt>
                 <dd class="govuk-summary-list__value">Temporary</dd>
-                <dd class="govuk-summary-list__actions">&nbsp;</dd>
-            </div>
+            </div>   
         </dl>
         
         <h2 class="govuk-heading-m">Product list</h2>
