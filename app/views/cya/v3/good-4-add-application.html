@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Good name 4
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="goods-in-application" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Add goods and services</span>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add to application</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="value-good">Value</label>
+                    <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
+                    <span id="value-good-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
+                    <div class="currency-input">
+                        <div class="currency-input-symbol" aria-hidden="true">£</div>
+                        {% if data['value-good'] %}
+                        <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" aria-describedby="amount-currency" value="{{ data['value-good'] }}">
+                        {% else %}
+                        <input class="govuk-input govuk-!-width-one-half" id="value-good" name="value-good" type="text" aria-describedby="amount-currency" value="40,000,000.00">
+                        {% endif %}
+                    </div>
+                </div> 
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="quantity">Quantity</label>
+                    <span id="quantity-hint" class="govuk-hint govuk-!-margin-bottom-2">Enter '0' if not applicable.</span>
+                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="1">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
+                    <select class="govuk-select" id="measurement" name="measurement">
+                        <option value="select">Select</option>
+                        <optgroup label="Other">
+                            <option value="intangible" {{ 'selected' if checked("measurement", "intangible") }}>intangible</option>
+                        </optgroup>
+                        <optgroup label="Item">
+                            <option value="pieces" selected {{ 'selected' if checked("measurement", "pieces") }}>pieces</option>
+                        </optgroup>
+                        <optgroup label="Mass">
+                            <option value="kt" {{ 'selected' if checked("measurement", "kt") }}>kt</option>
+                            <option value="t" {{ 'selected' if checked("measurement", "t") }}>t</option>
+                            <option value="kg" {{ 'selected' if checked("measurement", "kg") }}>kg</option>
+                            <option value="g" {{ 'selected' if checked("measurement", "g") }}>g</option>
+                            <option value="mg" {{ 'selected' if checked("measurement", "mg") }}>mg</option>
+                            <option value="mcg" {{ 'selected' if checked("measurement", "mcg") }}>mcg</option>
+                        </optgroup>
+                        <optgroup label="Volume">
+                            <option value="m3" {{ 'selected' if checked("measurement", "m3") }}>m3</option>
+                            <option value="cm3" {{ 'selected' if checked("measurement", "cm3") }}>cm3</option>
+                            <option value="mm3" {{ 'selected' if checked("measurement", "mm3") }}>mm3</option>
+                            <option value="l" {{ 'selected' if checked("measurement", "l") }}>l</option>
+                            <option value="cl" {{ 'selected' if checked("measurement", "cl") }}>cl</option>
+                            <option value="ml" {{ 'selected' if checked("measurement", "ml") }}>ml</option>
+                            <option value="ul" {{ 'selected' if checked("measurement", "ul") }}>ul</option>
+                        </optgroup> 
+                        <optgroup label="Length">
+                            <option value="m" {{ 'selected' if checked("measurement", "m") }}>m</option>
+                        </optgroup>
+                        <optgroup label="Area">
+                            <option value="m2" {{ 'selected' if checked("measurement", "m2") }}>m2</option>
+                        </optgroup> 
+                    </select>
+                </div> 
+            </fieldset>
+            <button type="submit" class="govuk-button govuk-!-margin-right-4" data-module="govuk-button">Save and continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="info-panel">
+            <span class="status-tag status-success govuk-body govuk-!-font-size-14 govuk-!-margin-left-0">Verified</span>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Good name 4 </p> 
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Description</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">A brief description about the intended use for this good.</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Control rating</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">AB4</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Part number</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">P/N4-123</p>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Document</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1"><a class="govuk-link" href="/public/pdfs/filename.pdf" target="_blank">[filename.pdf]</a></p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">A description about the document that has been attached for this good.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

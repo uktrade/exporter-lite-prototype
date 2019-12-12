@@ -1,0 +1,347 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">  
+        <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+        <h2 class="govuk-heading-m">Application details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Reference</dt>
+                {% if data['reference-application'] %}
+                <dd class="govuk-summary-list__value">{{ data['reference-application'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">01112019-ABCEXP</dd>
+                {% endif %}
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="application-reference.html">Change<span class="govuk-visually-hidden"> reference</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Export type</dt>
+                <dd class="govuk-summary-list__value">Temporary</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
+            </div>
+        </dl>
+        
+        <h2 class="govuk-heading-m">Product list</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Goods and services on the application</dt>
+                <dd class="govuk-summary-list__value">Good name 4<br /><span class="grey-text">...and 59 more</span></dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="goods-in-application.html">Manage<span class="govuk-visually-hidden"> goods</span></a> 
+                </dd>
+            </div> 
+        </dl>
+
+        <h2 class="govuk-heading-m">Location of goods</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Site</dt>
+                <dd class="govuk-summary-list__value">ABC Site 1</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div> 
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Site</dt>
+                <dd class="govuk-summary-list__value">ABC Site 2</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Site</dt>
+                <dd class="govuk-summary-list__value">ABC Site 3</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd> 
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">End user</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Individual</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">Jane Doe</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">https://www.abc.com</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Consignee</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Government</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">HMRC</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">https://www.gov.uk/government/organisations/hm-revenue-customs</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Ultimate end users</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Individual</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">Jane Doe</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Commercial</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">ABC Commercial Ltd</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">https://www.abc.com</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Third parties</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Agent or broker</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">John Doe</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                <dd class="govuk-summary-list__value">Intermediate consignee</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">XYZ Consignee Ltd</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">https://www.xyz.com</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">123 Street Name<br />London<br />AA1 1AA</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Additional documents</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Description</dt>
+                <dd class="govuk-summary-list__value">A description about this document that has been attached to this application.</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">[filename.pdf]</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Description</dt>
+                <dd class="govuk-summary-list__value">A description about this document that has been attached to this application.</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> description</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <a href="#" class="govuk-button govuk-!-margin-right-1">Confirm and continue</a> 
+    </div>
+</div>
+{% endblock %}
